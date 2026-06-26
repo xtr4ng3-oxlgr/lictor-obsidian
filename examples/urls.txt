@@ -1,0 +1,3 @@
+https://example.com
+http://bit.ly/test
+https://mercadopago-seguridad-login.example.com/verify?token=123

@@ -1,0 +1,14 @@
+$ /opt/pyvenv/bin/python3 /mnt/data/lictor_xtr4ng3_obsidian_release/tests/test_lictor.py
+RET=0
+[OK] test_init_json
+[OK] test_url_json
+[OK] test_domain_json
+[OK] test_email_json
+[OK] test_text_json
+[OK] test_file_json
+[OK] test_out_html_save_history
+[OK] test_help_does_not_crash
+
+$ /opt/pyvenv/bin/python3 -c import sys; sys.path.insert(0, r"/mnt/data/lictor_xtr4ng3_obsidian_release"); import lictor.gui; print("GUI_IMPORT_OK")
+RET=0
+GUI_IMPORT_OK

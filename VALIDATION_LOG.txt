@@ -1,0 +1,19 @@
+[OK] Python syntax: lictor.py lictor/core.py lictor/cli.py lictor/gui.py lictor/__init__.py
+[OK] py_compile executed
+[OK] tests/test_lictor.py
+[OK] test_init_json
+[OK] test_url_json
+[OK] test_domain_json
+[OK] test_email_json
+[OK] test_text_json
+[OK] test_file_json
+[OK] test_out_html_save_history
+[OK] test_help_does_not_crash
+[OK] direct init --json
+[OK] JSON parse init
+[OK] direct url --json
+[OK] JSON parse url
+[OK] direct email --json
+[OK] JSON parse email
+[OK] gui module import
+[OK] lictor.gui imported without launching GUI

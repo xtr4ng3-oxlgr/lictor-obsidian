@@ -1,0 +1,2 @@
+# LICTOR uses Python standard library only.
+# No external dependencies are required for normal use.
