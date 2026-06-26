@@ -1,191 +1,232 @@
 # LICTOR
 
 ```text
-LICTOR // LOCAL INDICATOR AND CASE TRIAGE OPERATOR
+LICTOR // OPERADOR LOCAL DE TRIAGE DE INDICADORES Y CASOS
 ```
 
-**LICTOR** is the harder brother of **CIVITAS**.
+**LICTOR** es una herramienta local de análisis preliminar para indicadores sospechosos, presión digital, correos, enlaces, dominios, textos y archivos.
 
-Where CIVITAS structures cases and evidence, LICTOR interrogates indicators before they become a case.
-
-Developed solely by **xtr4ng3**.
+Desarrollado únicamente por **xtr4ng3**.
 
 ---
 
-## Interface
-
-LICTOR now ships with the **Obsidian interface**: a heavier dark console aesthetic with structured telemetry, signal lanes, inline result rendering and a stronger operational identity, while still using only the Python standard library.
-
-## Purpose
-
-LICTOR is a local-first defensive triage engine for:
-
-- suspicious URLs;
-- suspicious domains;
-- email senders and bodies;
-- scam-pressure text patterns;
-- local files and hashes.
-
-It does not perform network lookups.  
-It does not send hidden messages.  
-It does not collect credentials.  
-It does not upload data.
-
----
-
-## Position in the OXLGR ecosystem
+## Identidad operativa
 
 ```text
-FARO      -> protects families during suspicious interactions
-LICTOR    -> interrogates indicators and marks risk signals
-CIVITAS   -> structures evidence and case material
-EIDOLON   -> manages forensic case work
-RAVENLOCK -> monitors integrity and drift
-LABYRINTH -> generates defensive laboratories
+CIVITAS = estructura, archivo, caso.
+LICTOR  = umbral, interrogación, señal.
 ```
 
----
+Dentro del ecosistema OXLGR, LICTOR funciona como una unidad complementaria de **CIVITAS**.
 
-## Why the name
-
-A lictor was an executor of civic authority.  
-In this project, LICTOR acts as the cold officer between raw suspicion and structured evidence.
+**CIVITAS** ordena evidencia, casos e inteligencia práctica.  
+**LICTOR** revisa indicadores antes de que una sospecha se convierta en expediente.
 
 ```text
-CIVITAS = the city, the record, the case.
-LICTOR  = the blade at the gate.
+LICTOR -> brazo ejecutor de CIVITAS: triage de indicadores, presión y umbral de caso.
 ```
 
 ---
 
-## Features
+## Propósito
 
-### URL / Domain
+LICTOR está orientado a revisión defensiva y local de:
 
-LICTOR flags local static signals:
+- URLs sospechosas;
+- dominios sospechosos;
+- remitentes y cuerpos de correo;
+- textos con presión de estafa o ingeniería social;
+- archivos locales y hashes.
 
-- HTTP;
-- shorteners;
+No realiza búsquedas en red.  
+No envía mensajes ocultos.  
+No recolecta credenciales.  
+No sube datos.  
+No ejecuta acciones destructivas.
+
+---
+
+## Interfaz Obsidian
+
+LICTOR incluye una interfaz gráfica oscura, pesada y operativa, diseñada como consola de triage local.
+
+La interfaz muestra:
+
+- panel lateral de módulos;
+- revisión de URL / dominio;
+- revisión de correos;
+- revisión de texto;
+- revisión de archivos;
+- historial local;
+- barra visual de riesgo;
+- señales detectadas;
+- salida JSON estructurada;
+- exportación de reportes.
+
+La interfaz mantiene el mismo principio del motor principal:
+
+```text
+todo local
+todo visible
+todo revisable
+```
+
+---
+
+## Posición dentro de OXLGR
+
+```text
+F.A.R.O.        -> orden forense local
+CIVITAS         -> estructura cívica de casos e inteligencia práctica
+LICTOR          -> brazo ejecutor de CIVITAS: triage de indicadores, presión y umbral de caso
+EIDOLON         -> identidad, rastro y residuo digital
+WARDEN-11       -> patrulla de superficie, señales y postura
+RAVENLOCK v2    -> capa sellada de utilidad
+BLACKLAMP       -> limpieza e inspección controlada
+OXLGR Sentinel  -> observación de procesos y endpoint
+SHADOWLINK      -> flujo lateral de terminal
+COLDCASE        -> manejo de casos forenses
+NERVECHECK      -> diagnóstico para usuario común
+```
+
+---
+
+## Funciones principales
+
+### URL / dominio
+
+LICTOR marca señales locales como:
+
+- uso de HTTP;
+- acortadores;
 - punycode;
-- raw IP host;
-- too many subdomains;
-- many hyphens;
-- suspicious words;
-- possible brand resemblance;
-- sensitive query parameters.
+- host por IP directa;
+- exceso de subdominios;
+- exceso de guiones;
+- palabras sensibles;
+- semejanza con marcas conocidas;
+- parámetros sensibles en la consulta.
 
-### Email
+### Correo
 
-LICTOR reviews:
+LICTOR revisa:
 
-- sender domain;
-- free email impersonation;
-- claimed entity;
-- subject;
-- body;
-- embedded links;
-- urgency;
-- code/password/token requests;
-- institution-like sensitive requests.
+- remitente;
+- dominio del remitente;
+- entidad declarada;
+- asunto;
+- cuerpo;
+- enlaces incrustados;
+- urgencia;
+- pedidos de códigos, claves, token o PIN;
+- intentos de suplantación institucional.
 
-### Text
+### Texto
 
-LICTOR detects:
+LICTOR detecta patrones de presión como:
 
-- requests for code, token, PIN, password or key;
-- urgent pressure;
-- money transfer language;
-- secrecy requests;
-- remote-access attempts;
-- changed-number / family emergency phrasing.
+- pedido de código, token, PIN, clave o contraseña;
+- urgencia artificial;
+- pedidos de transferencia o dinero;
+- aislamiento o secreto;
+- acceso remoto;
+- cambio de número;
+- emergencia familiar;
+- lenguaje típico de manipulación.
 
-### File
+### Archivo
 
-LICTOR calculates:
+LICTOR calcula:
 
 - MD5;
 - SHA1;
 - SHA256.
 
-It also flags risky executable/script-like extensions.
+También marca extensiones ejecutables o de script que requieren revisión cuidadosa.
 
 ---
 
-## GUI
+## Uso gráfico
 
-Run:
-
-```bash
-python lictor.py gui
-```
-
-Or double-click:
+En Windows, abrir:
 
 ```text
 ABRIR_LICTOR.bat
 ```
 
-If no command is provided, LICTOR attempts to open the GUI.
+También puede ejecutarse desde terminal:
+
+```bash
+python lictor.py gui
+```
+
+Si no se indica ningún comando, LICTOR intenta iniciar la interfaz gráfica.
 
 ---
 
-## CLI
+## Uso por consola
 
-### Initialize
+### Inicializar
 
 ```bash
 python lictor.py init
 ```
 
-JSON:
+Con salida JSON:
 
 ```bash
 python lictor.py init --json --pretty
 ```
 
-### URL
+### Analizar URL
 
 ```bash
 python lictor.py url "http://bit.ly/test?token=1"
 ```
 
+Con salida JSON:
+
 ```bash
 python lictor.py url "http://bit.ly/test?token=1" --json --pretty
 ```
 
-### Domain
+### Analizar dominio
 
 ```bash
 python lictor.py domain "example.com" --json --pretty
 ```
 
-### Email
+### Analizar correo
 
 ```bash
 python lictor.py email --sender "support@hotmail.com" --claimed "Microsoft" --subject "Cuenta bloqueada" --body "Tu cuenta será cerrada. Confirma tu clave." --json --pretty
 ```
 
-### Text
+### Analizar texto
 
 ```bash
 python lictor.py text "Soy tu nieto, cambié de número. Necesito plata urgente, no le digas a nadie." --json --pretty
 ```
 
-### File
+### Analizar archivo
 
 ```bash
 python lictor.py file "sample.exe" --json --pretty
 ```
 
-### History
+### Ver historial
 
 ```bash
 python lictor.py history
 ```
 
+Historial en JSON:
+
 ```bash
 python lictor.py history --json
 ```
+
+Exportar historial CSV:
 
 ```bash
 python lictor.py history --csv exports/history.csv
@@ -193,9 +234,9 @@ python lictor.py history --csv exports/history.csv
 
 ---
 
-## Stable JSON
+## Salida JSON
 
-All main scan commands support:
+Los comandos principales aceptan:
 
 ```text
 --json
@@ -205,7 +246,7 @@ All main scan commands support:
 --html
 ```
 
-Base structure:
+Estructura base:
 
 ```json
 {
@@ -225,21 +266,21 @@ Base structure:
 
 ---
 
-## Local Data
+## Datos locales
 
-Local history:
+Historial local:
 
 ```text
 lictor_data/lictor.sqlite3
 ```
 
-Reports:
+Reportes:
 
 ```text
 lictor_data/reports/
 ```
 
-Exports:
+Exportaciones:
 
 ```text
 lictor_data/exports/
@@ -247,41 +288,48 @@ lictor_data/exports/
 
 ---
 
-## Windows Scripts
+## Scripts de Windows
 
 ```text
-ABRIR_LICTOR.bat       -> open GUI
-VALIDAR_LICTOR.bat     -> run syntax checks and tests
-CREAR_EXE_OPCIONAL.bat -> optional PyInstaller build
+ABRIR_LICTOR.bat           -> abre la interfaz gráfica
+VALIDAR_LICTOR.bat         -> ejecuta validaciones y pruebas
+CREAR_EXE_OPCIONAL.bat     -> crea ejecutable de consola con PyInstaller
+CREAR_EXE_GUI_OPCIONAL.bat -> crea ejecutable gráfico con PyInstaller
 ```
 
 ---
 
-## Security
+## Seguridad
 
 ```text
-NO SPYWARE
-NO CREDENTIAL THEFT
-NO HIDDEN SENDING
-NO COVERT UPLOAD
-NO UNAUTHORIZED ACCESS
-NO DESTRUCTIVE AUTOMATION
+SIN SPYWARE
+SIN ROBO DE CREDENCIALES
+SIN ENVÍO OCULTO
+SIN SUBIDA ENCUBIERTA
+SIN ACCESO NO AUTORIZADO
+SIN AUTOMATIZACIÓN DESTRUCTIVA
 ```
+
+LICTOR está diseñado para uso defensivo, local y autorizado.
 
 ---
 
-## Author
+## Autor
 
 ```text
 xtr4ng3
 ```
 
 ```text
-LICTOR // Local Indicator and Case Triage Operator
+LICTOR // Operador Local de Triage de Indicadores y Casos
 ```
 
 ---
 
-## License
+## Licencia
+
+<img width="300" height="159" alt="giphy (25)" src="https://github.com/user-attachments/assets/021720ff-3aec-4916-9a93-25d47afd7d97" />
+
+**xtr4ng3**
 
 MIT.
