@@ -1,5 +1,8 @@
 # LICTOR
 
+<img width="1672" height="941" alt="lictor" src="https://github.com/user-attachments/assets/696855e3-6e76-462c-9067-28627ecf08dc" />
+
+
 ```text
 LICTOR // OPERADOR LOCAL DE TRIAGE DE INDICADORES Y CASOS
 ```
