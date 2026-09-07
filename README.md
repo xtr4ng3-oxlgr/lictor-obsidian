@@ -1,7 +1,6 @@
 # LICTOR
 
-<img width="1672" height="941" alt="lictor" src="https://github.com/user-attachments/assets/696855e3-6e76-462c-9067-28627ecf08dc" />
-
+<img width="1672" height="941" alt="lictor" src="https://github.com/user-attachments/assets/877e2ae9-5a1f-4fed-a55d-1ee859c5bf52" />
 
 ```text
 LICTOR // OPERADOR LOCAL DE TRIAGE DE INDICADORES Y CASOS
@@ -330,7 +329,7 @@ LICTOR // Operador Local de Triage de Indicadores y Casos
 
 ## Licencia
 
-<img width="300" height="159" alt="giphy (25)" src="https://github.com/user-attachments/assets/021720ff-3aec-4916-9a93-25d47afd7d97" />
+<img width="300" height="159" alt="xtr4ng3" src="https://github.com/user-attachments/assets/4bd30fd6-df60-4b29-a584-edb462769b0a" />
 
 **xtr4ng3**
 
