@@ -1,5 +1,5 @@
 # LICTOR
-
+![Build](https://github.com/xtr4ng3-oxlgr/lictor-obsidian/actions/workflows/build.yml/badge.svg)
 <img width="1672" height="941" alt="lictor" src="https://github.com/user-attachments/assets/877e2ae9-5a1f-4fed-a55d-1ee859c5bf52" />
 
 ```text
