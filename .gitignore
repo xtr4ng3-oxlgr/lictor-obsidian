@@ -1,0 +1,19 @@
+__pycache__/
+*.pyc
+lictor_data/
+build/
+dist/
+*.spec
+
+# Editors
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local dev validation logs (not for public repo)
+VALIDATION_LOG.txt
+VALIDATION_LOG_OBSIDIAN.txt
